@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($fileName)) {
         $postImageForServer = move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath);
 
         if ($postImageForServer) {
-            $insert = $db->query("INSERT INTO images (file_name) VALUES (" . $fileName . ")");
+            $insert = $db->query("INSERT INTO images (file_name) VALUES ('" . $fileName . "')");
         }
     }
 }
