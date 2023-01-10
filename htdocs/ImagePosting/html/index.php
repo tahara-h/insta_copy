@@ -8,18 +8,14 @@
   <title>画像投稿アプリ</title>
 </head>
 <body>
-  <?php include('dbConfig.php') ?>
-  <?php include('header.php') ?>
+  <?php include('dbConfig.php');
+        include("./getDatas.php");
+        include('header.php');
+   ?>
   <div class="imageList">
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
+    <?php foreach ($data as $image){?>
+      <a href="./imageDetail.php?id=<?php echo $image['id']; ?>"><img src="./images/<?php echo $image['file_name']; ?>" alt="投稿画像"></a>
+    <?php }; ?>
 </div>
 </body>
 </html>

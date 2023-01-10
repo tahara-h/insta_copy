@@ -14,9 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($fileName)) {
 
         if ($postImageForServer) {
             $insert = $db->query("INSERT INTO images (file_name) VALUES ('" . $fileName . "')");
+            console_log("DBに画像(".$fileName.")が登録できました");
         }
     }
 }
-
-header('Location: ' . './html/index.php', true, 303);
+#元のページに戻る機能
+echo <<<EOF
+<script>
+    location.href='http://127.0.200.1/imagePosting/html/index.php';
+</script>
+EOF;
 exit();

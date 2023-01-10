@@ -8,44 +8,19 @@
   <title>画像投稿アプリ</title>
 </head>
 <body>
-  <?php include('./header.php') ?>
+  <?php
+    include('./dbConfig.php');
+    include("./getDatas.php");
+    include('header.php');
+   ?>
   <div class="detailImageBox">
     <div class="detailImage">
-      <img src="../気球.jpeg" alt="投稿画像">
+      <img src="./images/<?php echo $data['image']['file_name'];?>" alt="投稿画像">
       <div class="detailImagButton">
-        <button class="updateButton">更新</button>
-        <button class="deleteButton">削除</button>
+        <button class="deleteButton" onclick="location.href='./deleteImage.php?id=<?php echo $_GET['id']; ?>'">削除</button>
       </div>
       <button onclick="location.href='./index.php';">戻る</button>
     </div>
-    <div class="comment">
-      <p class="commentTitle">コメント</p>
-      <ul>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-        <li>コメントコメントコメント</li>
-      </ul>
-      <div class="submitComment">
-        <form action="" method="post" enctype="multipart/form-data">
-          <textarea name="comment" id="comment" cols="40" rows="10"></textarea>
-          <button type="submit" name="submit">送信</button>
-        </form>
-      </div>
-  </div>
 </div>
 </body>
 </html>
