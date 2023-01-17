@@ -1,8 +1,8 @@
 <?php
 
-include('./dbConfig.php');
+include('dbConfig.php');
 
-$targetDirectory = 'images/';
+$targetDirectory = '../images/';
 $imageId = $_GET['id'];
 
 if(!empty($imageId)) {
@@ -21,7 +21,7 @@ if(!empty($imageId)) {
             #元のページに戻る機能
             echo <<<EOF
                 <script>
-                location.href='http://127.0.200.1/imagePosting/html/index.php';
+                location.href='http://127.0.200.1/imagePosting/';
                 </script>
             EOF;
             exit();
